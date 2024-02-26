@@ -58,6 +58,9 @@ function RootLayoutNav() {
         <Stack.Screen name="index" options={{
           title: 'Index Screen',
         }} />
+        <Stack.Screen name='player/PlayerModal' options={{
+          title: 'Agregar Jugador'
+        }} />
       </Stack>
       </GlobalProvider>
     </ThemeProvider>

@@ -3,18 +3,27 @@ import { createContext, useContext, useMemo, useReducer } from "react";
 interface GlobalContextProps {
     state: any;
     dispatch: any;
-  }
+}
+
+export interface Player {
+    name: string;
+    score: number[];
+    id: number;
+}
+
+interface GameState {
+    players: Player[];
+}
 
 const GlobalContext = createContext({} as GlobalContextProps);
 
-const initialState = {
+const initialState: GameState = {
     players: []
-    };
+};
 
 const playersReducer = (state: any, action: any) => {
     switch (action.type) {
         case "ADD_PLAYER":
-            console.log('ADD_PLAYER', action.payload)
             return {
                 ...state,
                 players: [...state.players, action.payload]
