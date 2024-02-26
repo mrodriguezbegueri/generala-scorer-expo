@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { TamaguiProvider } from 'tamagui'
 
 import config from '../tamagui.config'
+import { GlobalProvider } from '@/context/GlobalContext';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -52,11 +53,13 @@ function RootLayoutNav() {
   return (
     <TamaguiProvider config={config}>
     <ThemeProvider value={DefaultTheme}>
+      <GlobalProvider>
       <Stack>
         <Stack.Screen name="index" options={{
           title: 'Index Screen',
         }} />
       </Stack>
+      </GlobalProvider>
     </ThemeProvider>
     </TamaguiProvider>
   );
