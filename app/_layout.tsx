@@ -56,10 +56,7 @@ function RootLayoutNav() {
       <GlobalProvider>
       <Stack>
         <Stack.Screen name="index" options={{
-          title: 'Index Screen',
-        }} />
-        <Stack.Screen name='player/PlayerModal' options={{
-          title: 'Agregar Jugador'
+          title: 'Anotador Generala',
         }} />
       </Stack>
       </GlobalProvider>

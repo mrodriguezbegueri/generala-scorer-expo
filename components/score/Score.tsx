@@ -1,9 +1,19 @@
+import { GAME_VALUES } from '@/constants/GameValues';
 import React from 'react';
-import { Button, YStack } from 'tamagui';
+import { Button, Text, YStack } from 'tamagui';
 
 const Score = () => {
   return (
     <YStack gap={4} justifyContent="center">
+      {/* {
+        Object.keys(GAME_VALUES).map((key) => {
+          return (
+            <Button key={key} backgroundColor="lightblue" width={90}>
+              <Text>{GAME_VALUES[key].label}</Text>
+            </Button>
+          );
+        })
+      } */}
       <Button backgroundColor="lightblue" width={90}>
         Juegos
       </Button>
