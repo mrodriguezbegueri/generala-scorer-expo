@@ -1,11 +1,11 @@
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-import { GAME_VALUES } from '@/constants/GameValues';
 import React from 'react';
-import { Button, Text, View, YStack } from 'tamagui';
+import { Button, View, YStack } from 'tamagui';
 
 const Score = () => {
   return (
+    <YStack>
     <View style={styles.score}> 
       <Button style={styles.button}>
         Juegos
@@ -47,17 +47,17 @@ const Score = () => {
         Total
       </Button>  
     </View>
+    </YStack>
   );
 };
 
 const styles = {
   score: {
-    padding: 20,
     flex: 1,
     gap: 5
   },
   button: {
-    backgroundColor: 'grey',
+    backgroundColor: '#666',
     height: hp('4.5'),
     width: wp('25%'),
     fontSize: hp('1.5'),

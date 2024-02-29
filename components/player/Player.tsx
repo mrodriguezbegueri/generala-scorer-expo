@@ -25,8 +25,9 @@ const PlayerPage: FC<Props> = ({
   };
 
   return (
-    <View>
-      <Button style={styles.button} backgroundColor="lightblue" width={90}>
+    <YStack>
+    <View style={styles.player}>
+      <Button style={styles.button}>
         <Text>{player.name}</Text>
       </Button>
       {player.score.map((score, index) => (
@@ -34,26 +35,39 @@ const PlayerPage: FC<Props> = ({
         style={styles.button}
           onPress={() => openSelectScoreModal(index)}
           key={index}
-          backgroundColor="lightblue"
-          width={90}
         >
           <Text>{score}</Text>
         </Button>
       ))}
-      <Button style={styles.button} backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         <Text>{player.score.reduce((acc, score) => acc + score, 0)}</Text>
       </Button>
       </View>
+      </YStack>
   );
 };
 
+
 const styles = {
+  player: {
+    flex: 1,
+    gap: 5
+  },
   button: {
-    backgroundColor: 'grey',
+    backgroundColor: '#666',
     height: hp('4.5'),
     width: wp('25%'),
     fontSize: hp('1.5'),
   }
 }
+
+// const styles = {
+//   button: {
+//     backgroundColor: 'grey',
+//     height: hp('4.5'),
+//     width: wp('25%'),
+//     fontSize: hp('1.5'),
+//   }
+// }
 
 export default PlayerPage;

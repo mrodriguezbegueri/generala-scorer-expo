@@ -1,4 +1,4 @@
-import { Adapt, Button, Dialog, Sheet, Text } from 'tamagui';
+import { Adapt, Button, Dialog, Sheet, Text, View } from 'tamagui';
 import { FC } from 'react';
 import { GAME_VALUES } from '@/constants/GameValues';
 import { useGlobalContext } from '@/context/GlobalContext';
@@ -19,8 +19,6 @@ const SelectScore: FC<Props> = ({ open, setOpen, index, playerId }) => {
     };
     
     const updateScore = (value: number) => {
-        console.log('value selectScore', value)
-        console.log('playerId selectScore', playerId)
         if (playerId) {
             dispatch({ type: 'ADD_SCORE', payload: { name: playerId, index, score: value } });
             setOpen(false);
@@ -28,10 +26,11 @@ const SelectScore: FC<Props> = ({ open, setOpen, index, playerId }) => {
     }
 
   return (
-    <Dialog open={open} modal>
+    <View>
+    <Dialog open={open} modal >
       <Adapt when="sm" platform="touch">
         <Sheet onOpenChange={(open: boolean) => closeModal(open)}  animation="quick" zIndex={200000} modal dismissOnSnapToBottom>
-          <Sheet.Frame padding="$4" gap="$4">
+          <Sheet.Frame padding="$4" gap="$4" style={styles.container}>
             <Adapt.Contents />
           </Sheet.Frame>
         </Sheet>
@@ -42,7 +41,7 @@ const SelectScore: FC<Props> = ({ open, setOpen, index, playerId }) => {
             {
                 GAME_VALUES[`${index + 1}`].values.map((value) => {
                     return (
-                        <Button key={value} onPress={() => updateScore(value)} variant="outlined" backgroundColor="lightblue">
+                        <Button key={value} onPress={() => updateScore(value)} variant="outlined" style={styles.playerButton}>
                             <Text>{value}</Text>
                         </Button>
                     )
@@ -51,7 +50,17 @@ const SelectScore: FC<Props> = ({ open, setOpen, index, playerId }) => {
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog>
+    </View>
   );
 };
+
+const styles = {
+  container: {
+    backgroundColor: '#FFFACD',
+  },
+  playerButton: {
+    backgroundColor: '#666',
+  }
+}
 
 export default SelectScore;

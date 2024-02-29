@@ -36,7 +36,6 @@ const playersReducer = (state: any, action: any) => {
     }
     case 'ADD_SCORE': {
       const { name, index, score } = action.payload;
-      console.log('index', index)
       const players = state.players.map((player: any) => {
         if (player.name === name) {
           player.score[index] = score;
