@@ -1,6 +1,8 @@
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 import { Player } from '@/context/GlobalContext';
 import { FC } from 'react';
-import { Button, Text, YStack } from 'tamagui';
+import { Button, Text, View, YStack } from 'tamagui';
 
 interface Props {
   player: Player;
@@ -23,12 +25,13 @@ const PlayerPage: FC<Props> = ({
   };
 
   return (
-    <YStack gap={4} justifyContent="center">
-      <Button backgroundColor="lightblue" width={90}>
+    <View>
+      <Button style={styles.button} backgroundColor="lightblue" width={90}>
         <Text>{player.name}</Text>
       </Button>
       {player.score.map((score, index) => (
         <Button
+        style={styles.button}
           onPress={() => openSelectScoreModal(index)}
           key={index}
           backgroundColor="lightblue"
@@ -37,11 +40,20 @@ const PlayerPage: FC<Props> = ({
           <Text>{score}</Text>
         </Button>
       ))}
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button} backgroundColor="lightblue" width={90}>
         <Text>{player.score.reduce((acc, score) => acc + score, 0)}</Text>
       </Button>
-    </YStack>
+      </View>
   );
 };
+
+const styles = {
+  button: {
+    backgroundColor: 'grey',
+    height: hp('4.5'),
+    width: wp('25%'),
+    fontSize: hp('1.5'),
+  }
+}
 
 export default PlayerPage;

@@ -1,61 +1,68 @@
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 import { GAME_VALUES } from '@/constants/GameValues';
 import React from 'react';
-import { Button, Text, YStack } from 'tamagui';
+import { Button, Text, View, YStack } from 'tamagui';
 
 const Score = () => {
   return (
-    <YStack gap={4} justifyContent="center">
-      {/* {
-        Object.keys(GAME_VALUES).map((key) => {
-          return (
-            <Button key={key} backgroundColor="lightblue" width={90}>
-              <Text>{GAME_VALUES[key].label}</Text>
-            </Button>
-          );
-        })
-      } */}
-      <Button backgroundColor="lightblue" width={90}>
+    <View style={styles.score}> 
+      <Button style={styles.button}>
         Juegos
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         1
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         2
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         3
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         4
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         5
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         6
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         Escalera
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         Full
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         Poker
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         Generala
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         Doble
       </Button>
-      <Button backgroundColor="lightblue" width={90}>
+      <Button style={styles.button}>
         Total
-      </Button>
-    </YStack>
+      </Button>  
+    </View>
   );
 };
+
+const styles = {
+  score: {
+    padding: 20,
+    flex: 1,
+    gap: 5
+  },
+  button: {
+    backgroundColor: 'grey',
+    height: hp('4.5'),
+    width: wp('25%'),
+    fontSize: hp('1.5'),
+  }
+}
 
 
 export default Score;
