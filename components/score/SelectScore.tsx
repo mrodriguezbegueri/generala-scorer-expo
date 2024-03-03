@@ -2,6 +2,7 @@ import { Adapt, Button, Dialog, Sheet, Text, View } from 'tamagui';
 import { FC } from 'react';
 import { GAME_VALUES } from '@/constants/GameValues';
 import { useGlobalContext } from '@/context/GlobalContext';
+import Colors from '@/constants/Colors';
 
 
 interface Props {
@@ -59,7 +60,7 @@ const styles = {
     backgroundColor: '#FFFACD',
   },
   playerButton: {
-    backgroundColor: '#666',
+    backgroundColor: Colors.light.gameButtons,
   }
 }
 

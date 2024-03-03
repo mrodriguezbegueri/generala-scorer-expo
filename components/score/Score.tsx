@@ -2,6 +2,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 import React from 'react';
 import { Button, View, YStack } from 'tamagui';
+import Colors from '@/constants/Colors';
 
 const Score = () => {
   return (
@@ -57,7 +58,7 @@ const styles = {
     gap: 5
   },
   button: {
-    backgroundColor: '#666',
+    backgroundColor: Colors.light.gameButtons,
     height: hp('4.5'),
     width: wp('25%'),
     fontSize: hp('1.5'),

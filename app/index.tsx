@@ -16,6 +16,7 @@ import { View, XStack, Button, ScrollView } from 'tamagui';
 
 import { Menu, PlusCircle } from '@tamagui/lucide-icons';
 import { TouchableOpacity } from 'react-native';
+import Colors from '@/constants/Colors';
 
 const Index = () => {
   const { state, dispatch } = useGlobalContext();
@@ -45,7 +46,7 @@ const Index = () => {
           <Button
             onPress={() => newGame()}
             variant="outlined"
-            style={{ margin: hp('1'), flex: 1, backgroundColor: '#666'}}
+            style={{ margin: hp('1'), flex: 1, backgroundColor: Colors.light.gameButtons}}
           >
             Nuevo Juego
           </Button>
@@ -77,7 +78,7 @@ const Index = () => {
             onPress={() => addPlayer()}
             style={styles.addButton}
           >
-            <PlusCircle size={wp('20')} color="#666" />
+            <PlusCircle size={wp('20')} color={'#B4CCFF'} />
           </TouchableOpacity>
         </XStack>
       </View>

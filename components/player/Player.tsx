@@ -4,6 +4,8 @@ import { Player } from '@/context/GlobalContext';
 import { FC } from 'react';
 import { Button, Text, View, YStack } from 'tamagui';
 
+import Colors from '@/constants/Colors';
+
 interface Props {
   player: Player;
   setOpenSelectScoreModal: (open: boolean) => void;
@@ -54,7 +56,7 @@ const styles = {
     gap: 5
   },
   button: {
-    backgroundColor: '#666',
+    backgroundColor: Colors.light.gameButtons,
     height: hp('4.5'),
     width: wp('25%'),
     fontSize: hp('1.5'),
