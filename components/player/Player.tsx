@@ -2,7 +2,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 import { Player } from '@/context/GlobalContext';
 import { FC } from 'react';
-import { Button, SizableText, Text, View, YStack } from 'tamagui';
+import { Button, SizableText, View, YStack } from 'tamagui';
 
 import Colors from '@/constants/Colors';
 
@@ -53,7 +53,7 @@ const PlayerPage: FC<Props> = ({
     <YStack>
     <View style={styles.player}>
       <Button style={styles.button} onPress={testEdit}>
-      <SizableText size={'$1'}>{player.name}</SizableText>
+      <SizableText adjustsFontSizeToFit   style={styles.buttonText}>{player.name}</SizableText>
       </Button>
       {player.score.map((score, index) => (
         <Button
@@ -61,11 +61,11 @@ const PlayerPage: FC<Props> = ({
           onPress={() => openSelectScoreModal(index)}
           key={index}
         >
-          <SizableText size={'$1'}>{score}</SizableText>
+          <SizableText style={styles.buttonText} size={'$1'}>{score}</SizableText>
         </Button>
       ))}
       <Button style={styles.button}>
-      <SizableText size={'$1'}>{getTotalScore()}</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>{getTotalScore()}</SizableText>
       </Button>
       </View>
       </YStack>
@@ -81,6 +81,8 @@ const styles = {
   button: {
     height: hp('4.5'),
     width: wp('20%'),
+  },
+  buttonText: {
     fontSize: hp('1.5'),
   }
 }

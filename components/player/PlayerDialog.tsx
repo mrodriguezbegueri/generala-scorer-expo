@@ -37,6 +37,7 @@ const PlayerDialog: FC<Props> = ({ open, setOpen, editPlayer, setEditPlayer }) =
   const keyboardHeight = useKeyboard();
 
   const closeModal = () => {
+    setEditPlayer(null);
     setOpen(false);
     reset();
   };
@@ -78,7 +79,10 @@ const PlayerDialog: FC<Props> = ({ open, setOpen, editPlayer, setEditPlayer }) =
 
   useEffect(() => {
     if (keyboardHeight > 0) {
-      setDialogTop(dialogTop - keyboardHeight * 0.1);
+      const screenHeight = heightPercentageToDP("100");
+      const dialogHeight = heightPercentageToDP("30");
+      const newDialogTop = (screenHeight - dialogHeight - keyboardHeight) / 2;
+      setDialogTop(newDialogTop);
     } else {
       setDialogTop(heightPercentageToDP("30"));
     }

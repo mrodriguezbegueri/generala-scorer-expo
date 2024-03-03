@@ -9,43 +9,43 @@ const Score = () => {
     <YStack>
     <View style={styles.score}> 
       <Button style={styles.button}>
-      <SizableText size={'$1'}>{'Juegos'}</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>{'Juegos'}</SizableText>
       </Button>
       <Button style={styles.button}>
-        <SizableText size={'$1'}>1</SizableText>
+        <SizableText style={styles.buttonText} size={'$1'}>1</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText size={'$1'}>2</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>2</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText size={'$1'}>3</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>3</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText size={'$1'}>4</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>4</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText size={'$1'}>5</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>5</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText size={'$1'}>6</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>6</SizableText>
       </Button>
       <Button style={styles.button}>
-        <SizableText size={'$1'}>Escalera</SizableText>
+        <SizableText style={styles.buttonText} size={'$1'}>Escalera</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText size={'$1'}>Full</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>Full</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText size={'$1'}>Poker</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>Poker</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText size={'$1'}>Generala</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>Generala</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText size={'$1'}>Doble</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>Doble</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText size={'$1'}>Total</SizableText>
+      <SizableText style={styles.buttonText} size={'$1'}>Total</SizableText>
       </Button>  
     </View>
     </YStack>
@@ -61,6 +61,8 @@ const styles = {
     backgroundColor: Colors.light.gameButtons,
     height: hp('4.5'),
     width: wp('22%'),
+  },
+  buttonText: {
     fontSize: hp('1.5'),
   }
 }

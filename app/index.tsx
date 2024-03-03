@@ -35,9 +35,9 @@ const Index = () => {
   };
 
   const openEditPlayer = (player: PlayerType) => {
-    setEditPlayer(player)
+    setEditPlayer(player);
     setOpenModal(true);
-  }
+  };
 
   return (
     <View style={styles.container}>
@@ -46,7 +46,11 @@ const Index = () => {
           <Button
             onPress={() => newGame()}
             variant="outlined"
-            style={{ margin: hp('1'), flex: 1, backgroundColor: Colors.light.gameButtons}}
+            style={{
+              margin: hp('1'),
+              flex: 1,
+              backgroundColor: Colors.light.gameButtons,
+            }}
           >
             Nuevo Juego
           </Button>
@@ -54,35 +58,35 @@ const Index = () => {
       </View>
 
       <View style={styles.main}>
-        <ScrollView overScrollMode='auto' showsVerticalScrollIndicator={false}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <XStack gap={10}>
-            <Score />
-            {state.players.map((player: PlayerType) => (
-              <Player
-              openEditPlayer = {openEditPlayer}
-                setCurrentPlayerId={setCurrentPlayerId}
-                setIndex={setIndex}
-                setOpenSelectScoreModal={setOpenSelectScoreDialog}
-                key={player.name}
-                player={player}
-              />
-            ))}
-          </XStack>
-        </ScrollView>
+        <ScrollView overScrollMode="auto" showsVerticalScrollIndicator={false}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <XStack gap={10}>
+              <Score />
+              {state.players.map((player: PlayerType) => (
+                <Player
+                  openEditPlayer={openEditPlayer}
+                  setCurrentPlayerId={setCurrentPlayerId}
+                  setIndex={setIndex}
+                  setOpenSelectScoreModal={setOpenSelectScoreDialog}
+                  key={player.name}
+                  player={player}
+                />
+              ))}
+            </XStack>
+          </ScrollView>
         </ScrollView>
       </View>
       <View style={styles.footer}>
-      <View style={styles.addButtonContainer}>
-        <XStack>
-          <TouchableOpacity
-            onPress={() => addPlayer()}
-            style={styles.addButton}
-          >
-            <PlusCircle size={wp('20')} color={'#B4CCFF'} />
-          </TouchableOpacity>
-        </XStack>
-      </View>
+        <View style={styles.addButtonContainer}>
+          <XStack>
+            <TouchableOpacity
+              onPress={() => addPlayer()}
+              style={styles.addButton}
+            >
+              <PlusCircle size={wp('20')} color={'#B4CCFF'} />
+            </TouchableOpacity>
+          </XStack>
+        </View>
         <SelectScore
           playerId={currentPlayerId}
           index={index}
@@ -90,10 +94,14 @@ const Index = () => {
           setOpen={setOpenSelectScoreDialog}
         />
         <View>
-      <PlayerDialog editPlayer={editPlayer} open={openModal} setOpen={setOpenModal} setEditPlayer={setEditPlayer} />
+          <PlayerDialog
+            editPlayer={editPlayer}
+            open={openModal}
+            setOpen={setOpenModal}
+            setEditPlayer={setEditPlayer}
+          />
         </View>
       </View>
-      
     </View>
   );
 };
@@ -107,12 +115,10 @@ const styles = {
   },
   header: {
     flex: 0,
-    // backgroundColor: 'lightgrey',
   },
   main: {
     padding: hp('2'),
     flex: 10,
-    // backgroundColor: 'lightgrey',
     display: 'flex',
     flexDirextion: 'row',
   },
@@ -120,14 +126,8 @@ const styles = {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'lightgrey',
-  },
-  actionsButton: {
-    // flex: 1,
-    // backgroundColor: 'lightblue',
   },
   addButtonContainer: {
-    // position: 'absolute',
     bottom: hp('5'),
     flex: 1,
     justifyContent: 'center',
@@ -138,5 +138,5 @@ const styles = {
     height: hp('10'),
     borderRadius: 30,
     elevation: 100,
-  }
+  },
 };
