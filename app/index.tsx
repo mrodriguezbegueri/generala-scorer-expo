@@ -12,11 +12,13 @@ import {
   useGlobalContext,
 } from '@/context/GlobalContext';
 import { useState } from 'react';
-import { View, XStack, Button, ScrollView } from 'tamagui';
+import { View, XStack, Button, ScrollView, SizableText } from 'tamagui';
 
 import { PlusCircle } from '@tamagui/lucide-icons';
 import { TouchableOpacity } from 'react-native';
 import Colors from '@/constants/Colors';
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Index = () => {
   const { state, dispatch } = useGlobalContext();
@@ -41,6 +43,9 @@ const Index = () => {
 
   return (
     <View style={styles.container}>
+      <SafeAreaView>
+        <BannerAd size={BannerAdSize.BANNER} unitId={TestIds.BANNER} />
+      </SafeAreaView>
       <View style={styles.header}>
         <XStack gap={10}>
           <Button
@@ -52,7 +57,7 @@ const Index = () => {
               backgroundColor: Colors.light.gameButtons,
             }}
           >
-            Nuevo Juego
+            <SizableText numberOfLines={1} adjustsFontSizeToFit>Nuevo Juego</SizableText>
           </Button>
         </XStack>
       </View>
