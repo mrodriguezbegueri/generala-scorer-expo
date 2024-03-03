@@ -82,13 +82,15 @@ const Index = () => {
           </TouchableOpacity>
         </XStack>
       </View>
-        <PlayerDialog open={openModal} setOpen={setOpenModal} />
         <SelectScore
           playerId={currentPlayerId}
           index={index}
           open={openSelectScoreDialog}
           setOpen={setOpenSelectScoreDialog}
         />
+        <View>
+      <PlayerDialog open={openModal} setOpen={setOpenModal} />
+        </View>
       </View>
       
     </View>
