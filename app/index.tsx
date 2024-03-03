@@ -53,6 +53,7 @@ const Index = () => {
       </View>
 
       <View style={styles.main}>
+        <ScrollView overScrollMode='auto' showsVerticalScrollIndicator={false}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <XStack gap={10}>
             <Score />
@@ -66,6 +67,7 @@ const Index = () => {
               />
             ))}
           </XStack>
+        </ScrollView>
         </ScrollView>
       </View>
       <View style={styles.footer}>
