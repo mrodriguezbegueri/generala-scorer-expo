@@ -9,43 +9,43 @@ const Score = () => {
     <YStack>
     <View style={styles.score}> 
       <Button style={styles.button}>
-      <SizableText style={styles.buttonText} size={'$1'}>{'Juegos'}</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit style={styles.buttonText} size={'$1'}>{'Juegos'}</SizableText>
       </Button>
       <Button style={styles.button}>
-        <SizableText style={styles.buttonText} size={'$1'}>1</SizableText>
+        <SizableText numberOfLines={1} adjustsFontSizeToFit style={styles.buttonText} size={'$1'}>1</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText style={styles.buttonText} size={'$1'}>2</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit style={styles.buttonText} size={'$1'}>2</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText style={styles.buttonText} size={'$1'}>3</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit style={styles.buttonText} size={'$1'}>3</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText style={styles.buttonText} size={'$1'}>4</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit style={styles.buttonText} size={'$1'}>4</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText style={styles.buttonText} size={'$1'}>5</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit style={styles.buttonText} size={'$1'}>5</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText style={styles.buttonText} size={'$1'}>6</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit style={styles.buttonText} size={'$1'}>6</SizableText>
       </Button>
       <Button style={styles.button}>
-        <SizableText style={styles.buttonText} size={'$1'}>Escalera</SizableText>
+        <SizableText numberOfLines={1} adjustsFontSizeToFit  style={styles.buttonText}>Escalera</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText style={styles.buttonText} size={'$1'}>Full</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit style={styles.buttonText} size={'$1'}>Full</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText style={styles.buttonText} size={'$1'}>Poker</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit style={styles.buttonText} size={'$1'}>Poker</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText style={styles.buttonText} size={'$1'}>Generala</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit  style={styles.buttonText}>Generala</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText style={styles.buttonText} size={'$1'}>Doble</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit style={styles.buttonText} size={'$1'}>Doble</SizableText>
       </Button>
       <Button style={styles.button}>
-      <SizableText style={styles.buttonText} size={'$1'}>Total</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit style={styles.buttonText} size={'$1'}>Total</SizableText>
       </Button>  
     </View>
     </YStack>

@@ -53,7 +53,7 @@ const PlayerPage: FC<Props> = ({
     <YStack>
     <View style={styles.player}>
       <Button style={styles.button} onPress={testEdit}>
-      <SizableText adjustsFontSizeToFit   style={styles.buttonText}>{player.name}</SizableText>
+      <SizableText numberOfLines={1} adjustsFontSizeToFit   style={styles.buttonText}>{player.name}</SizableText>
       </Button>
       {player.score.map((score, index) => (
         <Button
