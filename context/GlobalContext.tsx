@@ -59,6 +59,19 @@ const playersReducer = (state: any, action: any) => {
           ...state,
           players: []
         };
+        case 'EDIT_PLAYER': {
+          const { name, newName } = action.payload;
+          const players = state.players.map((player: any) => {
+            if (player.name === name) {
+              player.name = newName;
+            }
+            return player;
+          });
+          return {
+            ...state,
+            players,
+          };
+        }
     default:
       return state;
   }

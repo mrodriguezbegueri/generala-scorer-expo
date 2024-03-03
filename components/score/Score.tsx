@@ -1,7 +1,7 @@
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 import React from 'react';
-import { Button, View, YStack } from 'tamagui';
+import { Button, SizableText, View, YStack } from 'tamagui';
 import Colors from '@/constants/Colors';
 
 const Score = () => {
@@ -9,43 +9,43 @@ const Score = () => {
     <YStack>
     <View style={styles.score}> 
       <Button style={styles.button}>
-        Juegos
+      <SizableText size={'$1'}>{'Juegos'}</SizableText>
       </Button>
       <Button style={styles.button}>
-        1
+        <SizableText size={'$1'}>1</SizableText>
       </Button>
       <Button style={styles.button}>
-        2
+      <SizableText size={'$1'}>2</SizableText>
       </Button>
       <Button style={styles.button}>
-        3
+      <SizableText size={'$1'}>3</SizableText>
       </Button>
       <Button style={styles.button}>
-        4
+      <SizableText size={'$1'}>4</SizableText>
       </Button>
       <Button style={styles.button}>
-        5
+      <SizableText size={'$1'}>5</SizableText>
       </Button>
       <Button style={styles.button}>
-        6
+      <SizableText size={'$1'}>6</SizableText>
       </Button>
       <Button style={styles.button}>
-        Escalera
+        <SizableText size={'$1'}>Escalera</SizableText>
       </Button>
       <Button style={styles.button}>
-        Full
+      <SizableText size={'$1'}>Full</SizableText>
       </Button>
       <Button style={styles.button}>
-        Poker
+      <SizableText size={'$1'}>Poker</SizableText>
       </Button>
       <Button style={styles.button}>
-        Generala
+      <SizableText size={'$1'}>Generala</SizableText>
       </Button>
       <Button style={styles.button}>
-        Doble
+      <SizableText size={'$1'}>Doble</SizableText>
       </Button>
       <Button style={styles.button}>
-        Total
+      <SizableText size={'$1'}>Total</SizableText>
       </Button>  
     </View>
     </YStack>
@@ -60,7 +60,7 @@ const styles = {
   button: {
     backgroundColor: Colors.light.gameButtons,
     height: hp('4.5'),
-    width: wp('25%'),
+    width: wp('22%'),
     fontSize: hp('1.5'),
   }
 }

@@ -14,7 +14,7 @@ import {
 import { useState } from 'react';
 import { View, XStack, Button, ScrollView } from 'tamagui';
 
-import { Menu, PlusCircle } from '@tamagui/lucide-icons';
+import { PlusCircle } from '@tamagui/lucide-icons';
 import { TouchableOpacity } from 'react-native';
 import Colors from '@/constants/Colors';
 
@@ -24,6 +24,7 @@ const Index = () => {
   const [openSelectScoreDialog, setOpenSelectScoreDialog] = useState(false);
   const [index, setIndex] = useState(1);
   const [currentPlayerId, setCurrentPlayerId] = useState<string | null>(null);
+  const [editPlayer, setEditPlayer] = useState<PlayerType | null>(null);
 
   const addPlayer = () => {
     setOpenModal(true);
@@ -33,16 +34,15 @@ const Index = () => {
     dispatch({ type: 'NEW_GAME' });
   };
 
+  const openEditPlayer = (player: PlayerType) => {
+    setEditPlayer(player)
+    setOpenModal(true);
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <XStack gap={10}>
-          <Button
-            backgroundColor={'$colorTransparent'}
-            icon={Menu}
-            size={hp('8')}
-            style={{ margin: hp('1') }}
-          ></Button>
           <Button
             onPress={() => newGame()}
             variant="outlined"
@@ -60,6 +60,7 @@ const Index = () => {
             <Score />
             {state.players.map((player: PlayerType) => (
               <Player
+              openEditPlayer = {openEditPlayer}
                 setCurrentPlayerId={setCurrentPlayerId}
                 setIndex={setIndex}
                 setOpenSelectScoreModal={setOpenSelectScoreDialog}
@@ -89,7 +90,7 @@ const Index = () => {
           setOpen={setOpenSelectScoreDialog}
         />
         <View>
-      <PlayerDialog open={openModal} setOpen={setOpenModal} />
+      <PlayerDialog editPlayer={editPlayer} open={openModal} setOpen={setOpenModal} />
         </View>
       </View>
       

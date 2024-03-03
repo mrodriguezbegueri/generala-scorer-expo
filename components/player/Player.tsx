@@ -2,7 +2,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 import { Player } from '@/context/GlobalContext';
 import { FC } from 'react';
-import { Button, Text, View, YStack } from 'tamagui';
+import { Button, SizableText, Text, View, YStack } from 'tamagui';
 
 import Colors from '@/constants/Colors';
 
@@ -11,6 +11,7 @@ interface Props {
   setOpenSelectScoreModal: (open: boolean) => void;
   setIndex: (index: number) => void;
   setCurrentPlayerId: (id: string) => void;
+  openEditPlayer: (player: Player) => void;
 }
 
 const PlayerPage: FC<Props> = ({
@@ -18,6 +19,7 @@ const PlayerPage: FC<Props> = ({
   setOpenSelectScoreModal,
   setIndex,
   setCurrentPlayerId,
+  openEditPlayer
 }) => {
   const openSelectScoreModal = (index: number) => {
     if (index === 11) return;
@@ -26,23 +28,44 @@ const PlayerPage: FC<Props> = ({
     setOpenSelectScoreModal(true);
   };
 
+  const getScoreColor = (score: number | string) => {
+    if (score === 0) return Colors.light.gameButtons;
+
+    if (score === 'x') return 'lightcoral';
+
+    return 'lightgreen';
+  }
+
+  const getTotalScore = () => {
+      return player.score.reduce((acc, score) => {
+        if (typeof score === 'string') {
+          return acc + 0;
+        }
+        return acc + score;
+      }, 0);
+  }
+
+  const testEdit = () => {
+    openEditPlayer(player)
+  }
+
   return (
     <YStack>
     <View style={styles.player}>
-      <Button style={styles.button}>
-        <Text>{player.name}</Text>
+      <Button style={styles.button} onPress={testEdit}>
+      <SizableText size={'$1'}>{player.name}</SizableText>
       </Button>
       {player.score.map((score, index) => (
         <Button
-        style={styles.button}
+        style={[styles.button, {backgroundColor: getScoreColor(score)}]}
           onPress={() => openSelectScoreModal(index)}
           key={index}
         >
-          <Text>{score}</Text>
+          <SizableText size={'$1'}>{score}</SizableText>
         </Button>
       ))}
       <Button style={styles.button}>
-        <Text>{player.score.reduce((acc, score) => acc + score, 0)}</Text>
+      <SizableText size={'$1'}>{getTotalScore()}</SizableText>
       </Button>
       </View>
       </YStack>
@@ -56,20 +79,10 @@ const styles = {
     gap: 5
   },
   button: {
-    backgroundColor: Colors.light.gameButtons,
     height: hp('4.5'),
-    width: wp('25%'),
+    width: wp('20%'),
     fontSize: hp('1.5'),
   }
 }
-
-// const styles = {
-//   button: {
-//     backgroundColor: 'grey',
-//     height: hp('4.5'),
-//     width: wp('25%'),
-//     fontSize: hp('1.5'),
-//   }
-// }
 
 export default PlayerPage;

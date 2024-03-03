@@ -58,6 +58,9 @@ function RootLayoutNav() {
         <Stack.Screen name="index" options={{
           title: 'Anotador Generala',
           headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: '#FFFACD',
+          },
         }} />
       </Stack>
       </GlobalProvider>
