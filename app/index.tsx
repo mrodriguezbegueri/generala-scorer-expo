@@ -90,7 +90,7 @@ const Index = () => {
           setOpen={setOpenSelectScoreDialog}
         />
         <View>
-      <PlayerDialog editPlayer={editPlayer} open={openModal} setOpen={setOpenModal} />
+      <PlayerDialog editPlayer={editPlayer} open={openModal} setOpen={setOpenModal} setEditPlayer={setEditPlayer} />
         </View>
       </View>
       

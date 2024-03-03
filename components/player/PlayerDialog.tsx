@@ -13,13 +13,14 @@ interface Props {
   open: boolean;
   setOpen: (open: boolean) => void;
   editPlayer: Player | null;
+  setEditPlayer: (player: Player | null) => void;
 }
 
 type Inputs = {
   name: string;
 };
 
-const PlayerDialog: FC<Props> = ({ open, setOpen, editPlayer }) => {
+const PlayerDialog: FC<Props> = ({ open, setOpen, editPlayer, setEditPlayer }) => {
   const { dispatch, state } = useGlobalContext();
   const {
     control,
@@ -62,6 +63,7 @@ const PlayerDialog: FC<Props> = ({ open, setOpen, editPlayer }) => {
     }
 
     dispatch({ type: "EDIT_PLAYER", payload: { name: editPlayer?.name, newName: data.name } });
+    setEditPlayer(null);
     setOpen(false);
     reset();
   }
